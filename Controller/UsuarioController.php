@@ -7,7 +7,7 @@ class UsuarioController{
     /**
      * Salvar o usuario submetido pelo formulário
      */
-    public function salvar(){
+    public static function salvar(){
         //cria um objeto do tipo Usuario
         $usuario = new Usuario;
 

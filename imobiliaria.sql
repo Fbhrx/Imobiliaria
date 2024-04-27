@@ -11,7 +11,7 @@ CREATE TABLE usuario(
 CREATE TABLE imovel(
 	id int(4) auto_increment PRIMARY KEY,
 	descricao varchar(200),
-	foto varcha(30),
+	foto varchar(30),
 	valor decimal(9,2),
 	tipo char(1)
 );

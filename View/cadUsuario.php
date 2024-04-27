@@ -19,6 +19,7 @@
             <option value="A">Administrador</option>
             <option value="C">Comum</option>
         </select><br/><br/>
+        <button>GAYYYYYYYYYYYY</button>
         <input type="submit" name="btnSalvar" id="btnSalvar">
     </form>
 </body>

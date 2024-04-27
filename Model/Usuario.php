@@ -48,7 +48,7 @@ class Usuario extends Banco{
         //cria um objeto do tipo conexão
         $conexao = new Conexao();
         //cria query de inserção passando os atributos que serão armazenados
-        $query = "inset int usuario (id, login, senha, permissao) values (null,:login,:senha,:permissao)";
+        $query = "insert into usuario (id, login, senha, permissao) values (null,:login,:senha,:permissao)";
         //cria a conexao com o banco de dados
         if($conn = $conexao->getConnection()){
             //prepara a query para execução 
@@ -81,6 +81,8 @@ class Usuario extends Banco{
         //cria query de seleção
         $query = "SELECT * FROM usuario";
         //prepara a query para a execução
+        $stmt = $conn->prepare($query);
+        //cria um array para receber o resultado da seleção
         $result = array();
         //executa a query
         if($stmt->execute()){

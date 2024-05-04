@@ -30,7 +30,7 @@
 if(isset($_POST['btnSalvar'])){
 
     //importa o UsuarioController.php
-    require_once '../controller/UsuarioController.php';
+    require_once 'controller/UsuarioController.php';
     //chama a função PHP que permite informar a classe e o Método que será acionado
     call_user_func(array('UsuarioController','Salvar'));
 }

@@ -1,6 +1,6 @@
 <?php 
 
-require_once '../model/Usuario.php';
+require_once "Model/Usuario.php";
 
 class UsuarioController{
 
@@ -23,7 +23,7 @@ class UsuarioController{
     /**
     * Lista os usuarios
     */
-    public function listar(){
+    public static function listar(){
         //cria um objeto do tipo Usuario
         $usuarios = new Usuario;
         //chama o método listAll()

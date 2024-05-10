@@ -8,19 +8,23 @@
 <body>
     <form name="cadUsuario" id="cadUsuario" action="" method="post">
         <label for="login">Login: </label>
-        <input type="text" name="login" id="login"><br/>
+        <input type="text" class="form-control col-sm-8" name="login" id="login"
+        value="<?php echo isset($usuario)?$usuario->getLogin():'' ?>" /><br/>
         <label for="Senha1">Senha: </label>
-        <input type="password" name ="senha1" id="senha1"><br/>
+        <input type="password" class="form-control col-sm-8" name ="senha1" id="senha1"
+        value="<?php echo isset($usuario)?$usuario->getSenha():'' ?>" /><br/>
         <label for="senha2">Confirmação da Senha: </label>
         <input type="password" name="senha2" id="senha2"><br/>
         <label for="permissao">Tipos de permissão</label>
         <select name="permissao" id="permissao">
             <option value="0">**SELECIONE**</option>
-            <option value="A">Administrador</option>
-            <option value="C">Comum</option>
+            <option value="A" <?php echo isset($usuario) && $usuario->getPermissao()=='A'?'selected':'' ?>>Administrador</option>
+            <option value="C" <?php echo isset($usuario) && $usuario->getPermissao()=='C'?'selected':'' ?>>Comum</option>
         </select><br/><br/>
-        <button>GAYYYYYYYYYYYY</button>
-        <input type="submit" name="btnSalvar" id="btnSalvar">
+        <input type="hidden" name="id" id="id"
+        value= "<?php echo isset($usuario)?$usuario->getId():''; ?>" />
+        <input type="submit" name="btnSalvar" id="btnSalvar" <?php header('location: index.php?action=listar'); ?> />
+        
     </form>
 </body>
 

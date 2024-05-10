@@ -47,8 +47,6 @@ class Usuario extends Banco{
 
         //cria um objeto do tipo conexão
         $conexao = new Conexao();
-        //cria query de inserção passando os atributos que serão armazenados
-        $query = "insert into usuario (id, login, senha, permissao) values (null,:login,:senha,:permissao)";
         //cria a conexao com o banco de dados
         if($conn = $conexao->getConnection()){
             if($this->id > 0){
@@ -73,7 +71,22 @@ class Usuario extends Banco{
     return $result;
 }
 
-    public function remove($id){
+    public function remove($id){    
+
+        $result = false;
+        //cria um objeto do tipo conexão
+        $conexao = new Conexao();
+        //cria a conexão com o banco de dados
+        $conn = $conexao->getConnection();
+        //cria query de remoção
+        $query = "DELETE FROM usuario where id = :id";
+        //Prepara a query para execução
+        $stmt = $conn->prepare($query);
+        //executa a query
+        if ($stmt->execute(array(':id'=> $id))){
+            $result = true;
+        }
+        return $result;
         
     }
 

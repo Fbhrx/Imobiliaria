@@ -12,6 +12,7 @@ class UsuarioController{
         $usuario = new Usuario;
 
         //armazena as informações do $_POST via set
+        $usuario->setId($_POST['id']);
         $usuario->setLogin($_POST['login']);
         $usuario->setSenha($_POST['senha1']);
         $usuario->setPermissao($_POST['permissao']);
@@ -28,6 +29,28 @@ class UsuarioController{
         $usuarios = new Usuario;
         //chama o método listAll()
         return $usuarios->listAll();
+    }
+
+    /**
+     * Mostrar formulário para editar um usuario
+     */
+    public static function editar(){
+        //cria um objeto do tipo Usuario
+        $usuario = new Usuario;
+
+        $usuario = $usuario->find($id);
+
+        return $usuario;
+    } 
+
+    /**
+     * Apagar um usuario conforme o id informado
+     */
+    public static function excluir($id){
+        //cria um objeto do tipo usuario
+        $usuario = new Usuario;
+
+        $usuario = $usuario->remove($id);
     }
 }
 

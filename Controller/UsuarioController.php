@@ -8,8 +8,9 @@ class UsuarioController{
      * Salvar o usuario submetido pelo formulário
      */
     public static function salvar(){
+
         //cria um objeto do tipo Usuario
-        $usuario = new Usuario;
+        $usuario = new Usuario();
 
         //armazena as informações do $_POST via set
         $usuario->setId($_POST['id']);
@@ -26,7 +27,7 @@ class UsuarioController{
     */
     public static function listar(){
         //cria um objeto do tipo Usuario
-        $usuarios = new Usuario;
+        $usuarios = new Usuario();
         //chama o método listAll()
         return $usuarios->listAll();
     }
@@ -34,9 +35,9 @@ class UsuarioController{
     /**
      * Mostrar formulário para editar um usuario
      */
-    public static function editar(){
+    public static function editar($id){
         //cria um objeto do tipo Usuario
-        $usuario = new Usuario;
+        $usuario = new Usuario();
 
         $usuario = $usuario->find($id);
 
@@ -48,7 +49,7 @@ class UsuarioController{
      */
     public static function excluir($id){
         //cria um objeto do tipo usuario
-        $usuario = new Usuario;
+        $usuario = new Usuario();
 
         $usuario = $usuario->remove($id);
     }

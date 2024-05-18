@@ -23,8 +23,7 @@
         </select><br/><br/>
         <input type="hidden" name="id" id="id"
         value= "<?php echo isset($usuario)?$usuario->getId():''; ?>" />
-        <input type="submit" name="btnSalvar" id="btnSalvar" <?php header('location: index.php?action=listar'); ?> />
-        
+        <input type="submit" name="btnSalvar" id="btnSalvar"  />
     </form>
 </body>
 
@@ -33,9 +32,11 @@
 //verifica se o botão submit foi acionado
 if(isset($_POST['btnSalvar'])){
 
+
     //importa o UsuarioController.php
     require_once 'controller/UsuarioController.php';
     //chama a função PHP que permite informar a classe e o Método que será acionado
-    call_user_func(array('UsuarioController','Salvar'));
+    call_user_func(array('UsuarioController','salvar'));
+   header('location: index.php?action=listar'); 
 }
 ?>

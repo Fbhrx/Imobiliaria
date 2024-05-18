@@ -6,7 +6,7 @@
             <tr>
                 <th>Login</th>
                 <th>Permissão</th>
-                <th><a href="cadUsuario">Novo</a></th>
+                <th><a href="index.php">Novo</a></th>
             </tr>
         </thead>
         <tbody>
@@ -27,7 +27,8 @@
                             <a href="index.php?action=editar&id=<?php echo $usuario->getId();?>">Editar</a>
                             <a href="index.php?action=excluir&id=<?php echo $usuario->getId();?>">Excluir</a>
                         </td>
-                        <?php 
+                    </tr>
+                    <?php 
                     }
                 } else {
                     ?>
